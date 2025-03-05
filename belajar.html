@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantis Untukmu</title>
+    <link rel="stylesheet" href="assetsss/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="romantic-text">Cinta Selamanya by afriatsyah </h1>
+        <p class="description">Kamu adalah bintang yang selalu menyinari hariku.</p>
+        <button class="love-button" onclick="showLoveMessage()">Aku Cinta Kamu ❤️</button>
+        
+        <div id="love-message" class="hidden">
+            <p class="love-text">Aku akan selalu mencintaimu, selamanya! 💖</p>
+        </div>
+        
+        <button class="love-button" onclick="showName()">Tekan Disini</button>
+        
+        <div id="name-message" class="hidden">
+            <p class="love-text">Aku Cinta Kamu, Isnawati Karim 💖</p>
+        </div>
+    </div>
+    
+    <div class="hearts-container"></div>
+
+    <script>
+        // Membuat efek hati melayang
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.querySelector(".hearts-container").appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+
+        // Menampilkan pesan cinta dengan animasi
+        function showLoveMessage() {
+            const loveMessage = document.getElementById("love-message");
+            loveMessage.classList.remove("hidden");
+            loveMessage.classList.add("show");
+        }
+
+        // Menampilkan nama dengan animasi
+        function showName() {
+            const nameMessage = document.getElementById("name-message");
+            nameMessage.classList.remove("hidden");
+            nameMessage.classList.add("show");
+        }
+    </script>
+</body>
+</html>
